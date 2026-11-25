@@ -1,0 +1,95 @@
+/*
+  WHAT THIS FILE IS FOR
+  The look of every page on the Fearkeeper website: the same warm, dark,
+  lantern-lit colors and lettering as the app (Cinzel for headings, Inter
+  for reading text). No pictures are used, only colors and a soft glow.
+*/
+
+:root {
+  --bg-top: #050403;        /* near-black at the top of the page */
+  --bg-bottom: #140D09;     /* warm dark brown at the bottom */
+  --glow: #963C14;          /* the hearth glow behind the title */
+  --text: #F3E9DA;          /* main reading text, warm off-white */
+  --muted: #C9AE88;         /* secondary text */
+  --heading: #F0D6AE;       /* headings */
+  --faint: #A8916F;         /* small print */
+  --amber: #F2A640;         /* the accent color used for links */
+  --card: rgba(34, 22, 14, 0.72);
+  --card-border: rgba(242, 166, 64, 0.2);
+}
+
+* { box-sizing: border-box; }
+
+html { background: var(--bg-top); }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  /* A soft orange glow at the top, fading into dark brown. */
+  background:
+    radial-gradient(ellipse 70% 320px at 50% 0, rgba(150, 60, 20, 0.45), transparent 70%),
+    linear-gradient(var(--bg-top), var(--bg-bottom));
+  background-attachment: fixed;
+}
+
+.wrap { max-width: 720px; margin: 0 auto; padding: 0 16px; }
+
+header.site { padding: 40px 0 8px; text-align: center; }
+header.site .name {
+  font-family: "Cinzel", Georgia, serif;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  font-size: 30px;
+  color: var(--heading);
+  text-decoration: none;
+  text-shadow: 0 0 24px rgba(255, 180, 90, 0.35);
+}
+nav.site { margin-top: 10px; font-size: 15px; }
+nav.site a { color: var(--muted); text-decoration: none; margin: 0 10px; }
+nav.site a:hover, nav.site a[aria-current="page"] { color: var(--amber); }
+
+main { padding: 24px 0 40px; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 18px;
+  padding: 28px 28px 20px;
+  margin-bottom: 24px;
+}
+@media (max-width: 520px) { .card { padding: 22px 18px 14px; } }
+
+h1, h2, h3 { font-family: "Cinzel", Georgia, serif; color: var(--heading); line-height: 1.3; }
+h1 { font-size: 28px; margin: 0 0 6px; letter-spacing: 0.03em; }
+h2 { font-size: 20px; margin: 30px 0 8px; letter-spacing: 0.02em; }
+h3 { font-family: "Inter", system-ui, sans-serif; font-size: 17px; font-weight: 600; margin: 22px 0 4px; }
+p { margin: 0 0 14px; }
+.lead { color: var(--muted); }
+.updated { color: var(--faint); font-size: 14px; margin-bottom: 18px; }
+
+a { color: var(--amber); }
+
+.button {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 12px;
+  background: linear-gradient(#FFCF7A, #F2A640 55%, #C46E1E);
+  color: #2A1406;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+footer.site {
+  border-top: 1px solid var(--card-border);
+  padding: 22px 0 40px;
+  color: var(--faint);
+  font-size: 13px;
+  line-height: 1.6;
+}
+footer.site p { margin: 0 0 8px; }
+footer.site a { color: var(--muted); }
